@@ -1,9 +1,11 @@
 image:
-  file: .gitpod.dockerfile
+  file: .gitpod.Dockerfile
+
+# List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/43_config_ports/
+ports:
+- port: 3000
+
+# List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/44_config_start_tasks/
 tasks:
- - init: . ${GITPOD_REPO_ROOT}/init_tasks.sh    
-vscode:
-  extensions:
-    - ms-python.python@2019.8.30787:TnGEOx35GXMhyKLjDGz9Aw==
-    - formulahendry.auto-close-tag@0.5.6:oZ/8R2VhZEhkHsoeO57hSw==
-    - mkaufman.HTMLHint@0.6.0:TdNYbCmjW8N3yiaPW4/adg==
+- init: echo 'init script' # runs during prebuild
+  command: echo 'start script'
